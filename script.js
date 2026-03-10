@@ -1,1 +1,1 @@
-console.log("Yaki Itum website loaded");
+console.log("אתר יקי איטום נטען בהצלחה");
