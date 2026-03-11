@@ -1,15 +1,15 @@
-Copilot said: בסדר! 👍 הנה את ה-CSS המלא שצריך
-בסדר! 👍 הנה את ה-CSS המלא שצריך להדביק:
-
-CSS
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fff;
@@ -21,14 +21,14 @@ body {
     padding: 0 2rem;
 }
 
-/* Navbar */
+/* ===== NAVBAR ===== */
 .navbar {
     background-color: #0066cc;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar .container {
@@ -41,6 +41,7 @@ body {
     color: white;
     font-size: 1.8rem;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -53,14 +54,14 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: #ffcc00;
 }
 
-/* Hero Section */
+/* ===== HERO SECTION ===== */
 .hero {
     background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
     color: white;
@@ -76,6 +77,7 @@ body {
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .hero p {
@@ -83,17 +85,18 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Buttons */
+/* ===== BUTTONS ===== */
 .btn {
     display: inline-block;
-    padding: 0.75rem 2rem;
+    padding: 0.8rem 2.5rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: bold;
+    text-align: center;
 }
 
 .btn-primary {
@@ -104,7 +107,7 @@ body {
 .btn-primary:hover {
     background-color: #0052a3;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
@@ -118,10 +121,14 @@ body {
     color: white;
 }
 
-/* Services Preview */
+/* ===== SERVICES PREVIEW ===== */
 .services-preview {
     padding: 3rem 0;
     background-color: #f5f5f5;
+}
+
+.services-preview .container {
+    text-align: center;
 }
 
 .services-preview h2 {
@@ -129,6 +136,7 @@ body {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #333;
+    font-weight: bold;
 }
 
 .services-grid {
@@ -142,13 +150,13 @@ body {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .service-card h3 {
@@ -159,14 +167,14 @@ body {
 
 .service-card p {
     color: #666;
+    font-size: 0.95rem;
 }
 
 .services-preview .btn-secondary {
-    display: block;
     margin: 2rem auto;
 }
 
-/* CTA Section */
+/* ===== CTA SECTION ===== */
 .cta {
     background-color: #0066cc;
     color: white;
@@ -177,6 +185,7 @@ body {
 .cta h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-weight: bold;
 }
 
 .cta p {
@@ -195,7 +204,7 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Page Header */
+/* ===== PAGE HEADER ===== */
 .page-header {
     background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
     color: white;
@@ -206,16 +215,21 @@ body {
 .page-header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .page-header p {
     font-size: 1.2rem;
 }
 
-/* Gallery Styles */
+/* ===== GALLERY SECTION ===== */
 .gallery-section {
     padding: 4rem 0;
     background-color: #f5f5f5;
+}
+
+.gallery-section .container {
+    text-align: center;
 }
 
 .gallery-section h2 {
@@ -223,11 +237,12 @@ body {
     margin-bottom: 3rem;
     font-size: 2rem;
     color: #333;
+    font-weight: bold;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -236,8 +251,9 @@ body {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    background-color: white;
 }
 
 .gallery-item img {
@@ -245,10 +261,11 @@ body {
     height: 250px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .gallery-overlay {
@@ -273,26 +290,35 @@ body {
     color: white;
     font-size: 1.5rem;
     text-align: center;
+    font-weight: bold;
 }
 
-/* Services Section Styles */
+/* ===== SERVICES SECTION ===== */
 .services-section {
     padding: 3rem 0;
     background-color: #fff;
 }
 
 .service-detail {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     padding: 2rem;
-    border-right: 4px solid #0066cc;
+    border-right: 5px solid #0066cc;
     background-color: #f9f9f9;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .service-detail h2 {
     color: #0066cc;
     margin-bottom: 1rem;
     font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.service-detail p {
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
 .service-detail ul {
@@ -302,9 +328,10 @@ body {
 }
 
 .service-detail li {
-    padding: 0.5rem 0;
+    padding: 0.75rem 0;
     padding-right: 1.5rem;
     position: relative;
+    color: #555;
 }
 
 .service-detail li:before {
@@ -313,9 +340,14 @@ body {
     right: 0;
     color: #0066cc;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
-/* Contact Section Styles */
+.service-detail .btn {
+    margin-top: 1rem;
+}
+
+/* ===== CONTACT SECTION ===== */
 .contact-section {
     padding: 3rem 0;
     background-color: #f5f5f5;
@@ -332,12 +364,14 @@ body {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info h2 {
     color: #0066cc;
     margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .info-item {
@@ -347,6 +381,7 @@ body {
 .info-item h3 {
     color: #333;
     margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .info-item p {
@@ -356,6 +391,7 @@ body {
 .info-item a {
     color: #0066cc;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .info-item a:hover {
@@ -366,12 +402,14 @@ body {
     background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form h2 {
     color: #0066cc;
     margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .form-group {
@@ -391,13 +429,10 @@ body {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
     font-size: 1rem;
-    font-family: inherit;
-}
-
-.form-group textarea {
-    resize: vertical;
+    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -408,7 +443,12 @@ body {
     box-shadow: 0 0 5px rgba(0, 102, 204, 0.3);
 }
 
-/* Footer */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ===== FOOTER ===== */
 footer {
     background-color: #0066cc;
     color: white;
@@ -421,14 +461,30 @@ footer p {
     margin: 0.5rem 0;
 }
 
-/* Responsive Design */
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
     }
 
+    .hero p {
+        font-size: 1.1rem;
+    }
+
     .nav-links {
         gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
     }
 
     .contact-content {
@@ -445,5 +501,42 @@ footer p {
 
     .cta h2 {
         font-size: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        padding: 0.7rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
