@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://noambenadiva.github.io/yaki-itum-website/sitemap.xml
