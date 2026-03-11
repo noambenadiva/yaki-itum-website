@@ -14,6 +14,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">בית</a></li>
                 <li><a href="services.html">שירותים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
                 <li><a href="contact.html">צור קשר</a></li>
             </ul>
         </div>
@@ -23,63 +24,65 @@
     <section class="page-header">
         <div class="container">
             <h1>צור קשר</h1>
-            <p>התקשר לצוות שלנו היום</p>
+            <p>אנחנו כאן כדי לעזור לך</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
-            <div class="contact-info">
-                <h2>פרטי התקשרות</h2>
-                <div class="info-item">
-                    <h3>📞 טלפון</h3>
-                    <p>
-                        <a href="tel:+972503131231" class="btn btn-primary" style="display: inline-block; margin-top: 1rem; padding: 1rem 2rem; font-size: 1.1rem;">💬 התקשר עכשיו - 0503131231</a>
-                    </p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>פרטי התקשרות</h2>
+                    <div class="info-item">
+                        <h3>📞 טלפון</h3>
+                        <p><a href="tel:+972503131231">050-3131231</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📧 דוא"ל</h3>
+                        <p><a href="mailto:yakiadik@gmail.com">yakiadik@gmail.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📍 אזור שירות</h3>
+                        <p>כל אזור תל אביב וגבולותיו</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🕐 שעות פתיחה</h3>
+                        <p>כל ימות השבוע 7:00 - 20:00</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="contact-form-container">
-                <h2>שלח לנו הודעה</h2>
-                <form id="contactForm" class="contact-form">
+                <form class="contact-form" id="contactForm">
+                    <h2>טופס יצירת קשר</h2>
                     <div class="form-group">
-                        <label for="name">שם *</label>
+                        <label for="name">שם מלא *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="email">דוא"ל *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="phone">טלפון *</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="phone">טלפון</label>
-                        <input type="tel" id="phone" name="phone">
+                        <label for="email">דוא"ל</label>
+                        <input type="email" id="email" name="email">
                     </div>
-
                     <div class="form-group">
-                        <label for="service">שירות שמעניין אותך *</label>
-                        <select id="service" name="service" required>
-                            <option value="">בחר שירות</option>
-                            <option value="basement">איטום מרתפים</option>
-                            <option value="foundation">איטום ביסוד</option>
-                            <option value="roof">איטום גגות</option>
-                            <option value="bathroom">איטום חדרי אמבטיה ומטבחים</option>
-                            <option value="commercial">איטום מסחרי</option>
-                            <option value="repair">תיקון נזקי מים</option>
+                        <label for="subject">נושא *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">בחר נושא</option>
+                            <option value="aiytum-martefim">איטום מרתפים</option>
+                            <option value="aiytum-bisod">איטום ביסוד</option>
+                            <option value="aiytum-gagot">איטום גגות</option>
+                            <option value="aiytum-ambatia">איטום חדרי אמבטיה</option>
                             <option value="other">אחר</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="message">הודעה *</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-
                     <button type="submit" class="btn btn-primary">שלח הודעה</button>
                 </form>
-                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
     </section>
