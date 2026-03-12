@@ -23,7 +23,6 @@
     .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s, color 0.24s;}
     .side-nav-links .active,.side-nav-links a:hover{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12) 60%,rgba(74,157,239,0.06) 95%);transform:translateX(-3px);}
     .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;}
-    
     h1 {
       color: #fff;
       margin: 70px 0 24px;
@@ -54,6 +53,30 @@
       display:inline-block;
     }
     .btn-blue:hover{background:linear-gradient(90deg,#1bb8e6 10%, #227cf0 88%);}
+    /* אזורי עבודה */
+    .areas-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      justify-content:center;
+      margin-bottom:48px;
+      margin-top:24px;
+    }
+    .area-circle{
+      width:120px;height:120px;
+      background:linear-gradient(135deg,#309dfd 15%, #1bb8e6 85%);
+      border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:bold;font-size:1.08em;
+      box-shadow:0 4px 22px #007acc2b;
+      text-align:center;
+      transition:.27s all;
+    }
+    .area-circle:hover{
+      transform:scale(1.08);
+      box-shadow:0 9px 24px #007acc33;
+      background:linear-gradient(135deg,#1bb8e6 15%, #309dfd 85%);
+    }
     @media (max-width: 1100px) {.side-menu{width:160px;}.logo-side{font-size:1em;}}
     @media (max-width: 800px) {
       body{ flex-direction: column;}
@@ -64,6 +87,7 @@
       .main-section{padding:0;}
       h1{font-size:1.5em;}
       .owner-home-pic img{width:66px;height:66px;}
+      .area-circle{width:80px;height:80px;font-size:0.97em;}
     }
   </style>
 </head>
@@ -112,6 +136,15 @@
     </div>
     <div class="subtitle">שירותי איטום מקצועיים עבור בתים ועסקים</div>
     <a href="contact.html" class="btn-blue">קבל הצעת מחיר</a>
+    <!-- אזורי עבודה בעיגולים -->
+    <div class="areas-wrap">
+      <div class="area-circle">כל המרכז והסביבה</div>
+      <div class="area-circle">כל הצפון</div>
+      <div class="area-circle">חדרה והסביבה</div>
+      <div class="area-circle">קיסריה והסביבה</div>
+      <div class="area-circle">ירושלים והסביבה</div>
+      <div class="area-circle">עמק הירדן</div>
+    </div>
   </main>
 </body>
 </html>
