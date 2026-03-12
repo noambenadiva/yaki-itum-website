@@ -6,23 +6,28 @@
   <title>צור קשר - יקי איטום</title>
   <style>
     html,body{height:100%;}
-    body {margin:0;min-height:100vh;font-family: "Segoe UI", Arial, sans-serif;display:flex;background:#11294d;overflow-x:hidden;}
-    .waves-bg {position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
-    .side-menu {width:220px;background:rgba(13,48,104,0.85);backdrop-filter:blur(7px);box-shadow:0 8px 32px rgba(20,60,131,0.12);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;z-index:2;position:relative;}
+    body {margin:0;min-height:100vh;font-family:"Segoe UI",Arial,sans-serif;display:flex;background:#11294d;overflow-x:hidden;}
+    .waves-bg{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
+    .side-menu{width:220px;background:rgba(13,48,104,0.85);backdrop-filter:blur(7px);box-shadow:0 8px 32px rgba(20,60,131,0.12);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;z-index:2;position:relative;}
     .logo-side{display:flex;align-items:center;gap:9px;color:#fff;font-size:1.25em;font-weight:bold;margin:0 0 40px 0;padding-right:18px;}
-    .logo-icon-side{width:40px;height:40px;background:linear-gradient(135deg,#63c6ff 0%, #0066cc 80%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.22em;border:2px solid #31bbff45;}
+    .logo-icon-side{width:40px;height:40px;background:linear-gradient(135deg,#63c6ff 0%,#0066cc 80%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.22em;border:2px solid #31bbff45;}
     .side-nav-links{list-style:none;width:100%;padding:0 0 0 6px;margin-bottom:35px;}
     .side-nav-links li{margin-bottom:20px;}
-    .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s, color 0.24s;}
+    .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s,color 0.24s;}
     .side-nav-links .active,.side-nav-links a:hover{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12) 60%,rgba(74,157,239,0.06) 95%);transform:translateX(-3px);}
     .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;}
-    h1 {color:#fff;margin:70px 0 24px;font-size:2.4em;font-weight:bold;text-shadow:0 2px 26px #46b8f668,0 0 7px #1892fd38;letter-spacing:.8px;}
-    .contact-block {max-width:420px;margin:0 auto;text-align:center;margin-top:18px;}
-    .contact-block p {font-size:1.19em;color:#fff;margin-bottom:10px;}
-    .btn-blue{background:linear-gradient(90deg,#309dfd 30%, #1bb8e6 100%);color:#fff;border:none;font-size:1.18em;font-weight:bold;border-radius:28px;padding:13px 56px;box-shadow:0 2px 14px #0a143d30;text-decoration:none;transition:.27s all;cursor:pointer;display:inline-block;}
-    .btn-blue:hover{background:linear-gradient(90deg,#1bb8e6 10%, #227cf0 88%);}
-    @media(max-width:1100px){.side-menu{width:160px;}.logo-side{font-size:1em;}}
-    @media(max-width:800px){body{flex-direction:column;}.side-menu{position:relative;flex-direction:row;width:100vw;min-height:unset;height:66px;padding:0 12px;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px #003a8033;}.logo-side{margin:0 13px 0 0;}.side-nav-links{display:flex;flex-direction:row;gap:12px;margin-bottom:0;}.side-nav-links li{margin-bottom:0;}.main-section{padding:0;}h1{font-size:1.3em;}}
+    h1{color:#fff;margin:70px 0 24px;font-size:2.3em;font-weight:bold;text-shadow:0 2px 26px #46b8f668,0 0 7px #1892fd38;letter-spacing:.8px;}
+    .contact-block{background:rgba(255,255,255,0.09);border-radius:18px;max-width:360px;margin:0 auto;text-align:center;padding:24px 20px;box-shadow:0 2px 22px #0862cd22;}
+    form{display:flex;flex-direction:column;gap:16px;}
+    .input-field{background:rgba(255,255,255,0.34);color:#053565;padding:14px 12px;font-size:1.1em;border-radius:8px;border:none;outline:none;box-shadow:0 1px 9px #059ae245;font-family:inherit;}
+    .input-field:focus{background:rgba(255,255,255,0.45);}
+    textarea.input-field{min-height:60px;resize:vertical;}
+    .btn-form{background:linear-gradient(90deg,#309dfd 30%,#1bb8e6 100%);color:#fff;border:none;font-size:1.15em;font-weight:bold;border-radius:26px;padding:13px 0;box-shadow:0 2px 14px #0a143d30;text-decoration:none;transition:.27s all;cursor:pointer;width:100%;}
+    .btn-form:hover{background:linear-gradient(90deg,#1bb8e6 10%,#227cf0 88%);}
+    .call-btn{background:#0086ff;color:#fff;border:none;font-size:1.13em;font-weight:bold;border-radius:26px;padding:10px 0;margin:18px 0 0 0;box-shadow:0 2px 14px #05356530;text-decoration:none;transition:.27s all;cursor:pointer;width:100%;}
+    .call-btn:hover{background:#53befb;color:#042173;}
+    @media(max-width:1100px){.side-menu{width:160px;}.logo-side{font-size:1em;}.contact-block{max-width:99vw;}}
+    @media(max-width:800px){body{flex-direction:column;}.side-menu{position:relative;flex-direction:row;width:100vw;min-height:unset;height:66px;padding:0 12px;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px #003a8033;}.logo-side{margin:0 13px 0 0;}.side-nav-links{display:flex;flex-direction:row;gap:12px;margin-bottom:0;}.side-nav-links li{margin-bottom:0;}.main-section{padding:0;}h1{font-size:1.3em;}.contact-block{padding:14px 0;}}
   </style>
 </head>
 <body>
@@ -42,8 +47,7 @@
         fill="url(#dynamicBlueGrad)">
         <animate attributeName="d"
           values="M0,180 Q500,280 900,170 T1800,140 V880 H0 Z;M0,160 Q520,200 900,260 T1800,220 V880 H0 Z;M0,220 Q450,320 900,170 T1800,200 V880 H0 Z;M0,180 Q500,280 900,170 T1800,140 V880 H0 Z"
-          dur="9s"
-          repeatCount="indefinite" />
+          dur="9s" repeatCount="indefinite" />
       </path>
     </svg>
   </div>
@@ -63,12 +67,29 @@
   <main class="main-section">
       <h1>צור קשר</h1>
       <div class="contact-block">
-        <p><b>מחפשים איטום מקצועי?</b> צרו קשר עם יקי איטום בכל שעה!</p>
-        <p><b>טלפון:</b> <a href="tel:0503131231" style="color:#73e2ff">050-313-1231</a></p>
-        <p><b>אימייל:</b> <a href="mailto:yaki@itum.co.il" style="color:#73e2ff">yaki@itum.co.il</a></p>
-        <p><b>כתובת:</b> תל אביב והסביבה</p>
-        <a href="tel:0503131231" class="btn-blue">התקשר עכשיו</a>
+        <form onsubmit="sendEmail(event)">
+          <input type="text" class="input-field" name="name" placeholder="שם מלא" required />
+          <input type="email" class="input-field" name="email" placeholder="אימייל" required />
+          <input type="tel" class="input-field" name="phone" placeholder="מספר טלפון" required />
+          <textarea class="input-field" name="message" placeholder="הודעה" required></textarea>
+          <button type="submit" class="btn-form">שלח</button>
+        </form>
+        <a href="tel:0503131231" class="call-btn">התקשר ליקי 050-313-1231</a>
       </div>
+      <script>
+      function sendEmail(event) {
+        event.preventDefault();
+        var form = event.target;
+        var name = form.name.value;
+        var email = form.email.value;
+        var phone = form.phone.value;
+        var message = form.message.value;
+        var mailto = "mailto:yaki@itum.co.il"
+          + "?subject=" + encodeURIComponent("פניה מהאתר יקי איטום")
+          + "&body=" + encodeURIComponent("שם: " + name + "\nאימייל: " + email + "\nטלפון: " + phone + "\n\nהודעה: " + message);
+        window.location.href = mailto;
+      }
+      </script>
   </main>
 </body>
 </html>
