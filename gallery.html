@@ -1,149 +1,171 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>גלריה - יקי איטום</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>עבודות שלנו - יקי איטום</title>
+  <link rel="stylesheet" href="styles.css" />
 
-        h1 {
-            text-align: center;
-            color: #0066cc;
-            margin-bottom: 50px;
-            font-size: 2.5em;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
+  <style>
+    /* רקע בהיר כדי שיהיה נעים לקריאה */
+    body {
+      background: linear-gradient(135deg, #f4fbff 0%, #e9f6ff 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #0b2a3a;
+    }
 
-        /* Phone Screen Section */
-        .phone-section {
-            max-width: 900px;
-            margin: 0 auto 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
+    /* כותרת */
+    h1 {
+      text-align: center;
+      color: #0b5aa5;
+      margin: 30px 0 40px;
+      font-size: 2.4em;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    }
 
-        .phone-mock {
-            position: relative;
-            width: 300px;
-            height: 600px;
-            background: #000;
-            border-radius: 40px;
-            padding: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
+    /* פריסת החלק העליון: תמונה מעל + מסך טלפון */
+    .phone-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      align-items: center;
+    }
 
-        .phone-mock::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 25px;
-            background: #000;
-            border-radius: 0 0 20px 20px;
-            z-index: 10;
-        }
+    /* קופסה לתמונה מעל */
+    .preview-card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(11, 90, 165, 0.15);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
 
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            border-radius: 30px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .preview-card img {
+      width: 100%;
+      max-width: 680px;
+      display: block;
+      margin: 0 auto 14px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
 
-        .phone-screen video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .preview-card h2 {
+      color: #0b5aa5;
+      font-size: 1.6em;
+      margin: 0 0 8px;
+      text-align: center;
+    }
 
-        .video-preview {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
+    .preview-card p {
+      margin: 0;
+      text-align: center;
+      color: #21465a;
+      font-size: 1.05em;
+      line-height: 1.5;
+    }
 
-        .video-preview img {
-            width: 100%;
-            max-width: 350px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-        }
+    /* מסך טלפון (על הצד/דיוקן - כמו שסיכמנו קודם) */
+    .phone-mock {
+      position: relative;
+      width: 320px;
+      height: 640px;
+      background: #0b0b0b;
+      border-radius: 44px;
+      padding: 14px;
+      box-shadow: 0 14px 50px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      justify-self: center;
+    }
 
-        .video-preview h2 {
-            color: #0066cc;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
+    /* "מגרעת" למעלה */
+    .phone-mock::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 26px;
+      background: #0b0b0b;
+      border-radius: 0 0 18px 18px;
+      z-index: 2;
+    }
 
-        .video-preview p {
-            color: #333;
-            font-size: 1.1em;
-        }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 34px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        @media (max-width: 768px) {
-            .phone-section {
-                flex-direction: column;
-                gap: 20px;
-            }
+    .phone-screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
 
-            .phone-mock {
-                width: 250px;
-                height: 500px;
-            }
-        }
-    </style>
+    /* רספונסיבי */
+    @media (max-width: 980px) {
+      .phone-section {
+        grid-template-columns: 1fr;
+      }
+
+      .phone-mock {
+        width: 290px;
+        height: 580px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">💧</div>
-                <span>יקי איטום</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </div>
-    </nav>
+  <!-- התפריט נשען על styles.css שלך -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">💧</div>
+        <span>יקי איטום</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">בית</a></li>
+        <li><a href="services.html">שירותים</a></li>
+        <li><a href="gallery.html">גלריה</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h1>עבודות שלנו</h1>
+  <h1>עבודות שלנו</h1>
 
-    <!-- Phone Screen with Video -->
-    <section class="phone-section">
-        <div class="video-preview">
-            <img src="media/271a74fa-0d39-4060-9259-95fe3561b1ab.jpg" alt="עבודה">
-            <h2>צפו בעבודות שלנו</h2>
-            <p>סרטון של כל העבודות המקצועיות שלנו</p>
-        </div>
+  <section class="phon
+      <!-- תמונה מעל לפני שמגיעים למסך -->
+    <div class="preview-card">
+      <img
+        src="media/271a74fa-0d39-4060-9259-95fe3561b1ab.jpg"
+        alt="בעל העסק"
+      />
+      <h2>צפו בעבודות שלנו</h2>
+      <p>סרטון מרכז שמציג עבודות נבחרות שלנו</p>
+    </div>
 
-        <div class="phone-mock">
-            <div class="phone-screen">
-                <video controls>
-                    <source src="media/WhatsApp Video 2026-03-12 at 13.16.44.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </section>
+    <!-- מסך טלפון עם הסרטון בפנים -->
+    <div class="phone-mock">
+      <div class="phone-screen">
+        <video controls playsinline>
+          <source src="media/WhatsApp Video 2026-03-12 at 13.47.56.mp4" type="video/mp4" />
+          הדפדפן שלך לא תומך בהצגת וידאו.
+        </video>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
