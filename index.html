@@ -1,342 +1,117 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>יקי איטום - שירותי איטום מקצועיים</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-        body {
-            background: #f6faff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            color: #333;
-        }
-
-        .navbar {
-            background: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .navbar .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #0066cc;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5em;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #0066cc;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #ffffff 0%, #eaf2ff 100%);
-            padding: 70px 0 40px;
-        }
-        .hero-main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-        .hero-title {
-            color: #0066cc;
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .hero-desc {
-            color: #555;
-            font-size: 1.2em;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-        .owner-image-hero {
-            margin: 0 auto 16px;
-        }
-        .owner-image-hero img {
-            width: 105px;
-            height: 105px;
-            border-radius: 14px;
-            object-fit: cover;
-            box-shadow: 0 4px 16px rgba(0,102,204,0.16);
-            display: block;
-        }
-        .hero-btn {
-            background: #0066cc;
-            color: #fff;
-            padding: 15px 38px;
-            border-radius: 5px;
-            border: none;
-            font-size: 1.1em;
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 10px;
-            cursor: pointer;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-        .hero-btn:hover {
-            background: #0052a3;
-        }
-
-        /* Services Preview */
-        .services-preview {
-            background: #fff;
-            padding: 60px 20px;
-        }
-        .services-preview h2 {
-            color: #0066cc;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2em;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 18px;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-        .service-card {
-            background: #f9f9f9;
-            padding: 28px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .service-card h3 {
-            color: #0066cc;
-            margin-bottom: 10px;
-        }
-        .service-card p {
-            color: #666;
-        }
-
-        /* Service Areas */
-        .service-areas {
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0fafc 100%);
-            padding: 50px 20px;
-        }
-        .service-areas h2 {
-            color: #0066cc;
-            text-align: center;
-            margin-bottom: 38px;
-            font-size: 2em;
-        }
-        .areas-map {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 24px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .area-circle {
-            width: 135px;
-            height: 135px;
-            border-radius: 50%;
-            background: linear-gradient(135deg,#0066cc 0%, #0052a3 80%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 14px rgba(0,102,204,0.19);
-        }
-        .area-circle:hover {
-            transform: scale(1.08);
-            box-shadow: 0 9px 24px rgba(0,102,204,0.33);
-        }
-        .area-circle-text {
-            color: white;
-            font-weight: bold;
-            text-align: center;
-            font-size: 1.07em;
-            line-height: 1.3;
-        }
-
-        /* CTA */
-        .cta {
-            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-            color: white;
-            padding: 48px 20px;
-            text-align: center;
-        }
-        .cta h2 {
-            font-size: 1.8em;
-            margin-bottom: 14px;
-        }
-        .cta p {
-            font-size: 1.15em;
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 24px 20px;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2em;
-            }
-            .owner-image-hero img {
-                width: 72px;
-                height: 72px;
-            }
-            .services-preview h2,
-            .service-areas h2 {
-                font-size: 1.4em;
-            }
-            .service-card {
-                padding: 18px;
-            }
-            .area-circle {
-                width: 110px;
-                height: 110px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>יקי איטום - עמוד הבית</title>
+  <style>
+    html,body{height:100%;}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      background: #11294d;
+      overflow-x: hidden;
+    }
+    .waves-bg {position: fixed;inset: 0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
+    .side-menu {width:220px;background:rgba(13,48,104,0.85);backdrop-filter:blur(7px);box-shadow:0 8px 32px rgba(20,60,131,0.12);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;z-index:2;position:relative;}
+    .logo-side {display:flex;align-items:center;gap:9px;color:#fff;font-size:1.25em;font-weight:bold;margin:0 0 40px 0;padding-right:18px;letter-spacing:1px;text-shadow:0 4px 23px #024a9b38;}
+    .logo-icon-side{width:40px;height:40px;background:linear-gradient(135deg,#63c6ff 0%, #0066cc 80%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.22em;border:2px solid #31bbff45;}
+    .side-nav-links{list-style:none;width:100%;padding:0 0 0 6px;margin-bottom:35px;}
+    .side-nav-links li{margin-bottom:20px;}
+    .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s, color 0.24s;}
+    .side-nav-links .active,.side-nav-links a:hover{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12) 60%,rgba(74,157,239,0.06) 95%);transform:translateX(-3px);}
+    .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;}
+    
+    h1 {
+      color: #fff;
+      margin: 70px 0 24px;
+      font-size: 2.8em;
+      font-weight: bold;
+      text-shadow: 0 2px 26px #46b8f668, 0 0 7px #1892fd38;
+      letter-spacing: .8px;
+      position: relative;
+      animation: fadeIn 1.1s;
+    }
+    @keyframes fadeIn {from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);}}
+    .owner-home-pic {margin-bottom: 18px;}
+    .owner-home-pic img{width:110px;height:110px;object-fit:cover;border-radius:19px;box-shadow: 0 4px 16px #1266bb2e;}
+    .subtitle {font-size: 1.23em; color: #eaffff; text-align: center; margin-bottom: 24px;text-shadow:0 1px 20px #0e5ec257;}
+    .btn-blue{
+      background:linear-gradient(90deg,#309dfd 30%, #1bb8e6 100%);
+      color:#fff;
+      border:none;
+      font-size:1.14em;
+      font-weight:bold;
+      border-radius:28px;
+      padding:15px 56px;
+      margin-bottom: 40px;
+      box-shadow:0 2px 14px #0a143d30;
+      text-decoration:none;
+      transition:.27s all;
+      cursor:pointer;
+      display:inline-block;
+    }
+    .btn-blue:hover{background:linear-gradient(90deg,#1bb8e6 10%, #227cf0 88%);}
+    @media (max-width: 1100px) {.side-menu{width:160px;}.logo-side{font-size:1em;}}
+    @media (max-width: 800px) {
+      body{ flex-direction: column;}
+      .side-menu{position:relative;flex-direction:row;width:100vw;min-height:unset;height:66px;padding:0 12px;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px #003a8033;}
+      .logo-side{margin:0 13px 0 0;}
+      .side-nav-links{display:flex;flex-direction:row;gap:12px;margin-bottom:0;}
+      .side-nav-links li{margin-bottom:0;}
+      .main-section{padding:0;}
+      h1{font-size:1.5em;}
+      .owner-home-pic img{width:66px;height:66px;}
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">💧</div>
-                <span>יקי איטום</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section with Owner Image under Title -->
-    <section class="hero">
-        <div class="hero-main">
-            <div class="hero-title">יקי איטום</div>
-            <div class="owner-image-hero">
-                <img src="media/271a74fa-0d39-4060-9259-95fe3561b1ab.jpg" alt="בעל העסק" />
-            </div>
-            <div class="hero-desc">שירותי איטום מקצועיים עבור בתים ועסקים</div>
-            <a href="contact.html" class="hero-btn">קבל הצעת מחיר</a>
-        </div>
-    </section>
-
-    <!-- Services Preview Section -->
-    <section class="services-preview">
-        <div class="container">
-            <h2>השירותים שלנו</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>🏠 איטום מרתפים</h3>
-                    <p>הגנה מלאה מפני ספיחת מים</p>
-                </div>
-                <div class="service-card">
-                    <h3>🏗️ איטום ביסוד</h3>
-                    <p>חיזוק ועיצוב יסודות</p>
-                </div>
-                <div class="service-card">
-                    <h3>🏘️ איטום גגות</h3>
-                    <p>הגנה מפני דלפות וגשם</p>
-                </div>
-                <div class="service-card">
-                    <h3>🚿 חדרי אמבטיה ומטבחים</h3>
-                    <p>איטום מקצועי למקומות רטובים</p>
-                </div>
-            </div>
-            <a href="services.html" class="hero-btn" style="background:#fff;color:#0066cc;">ראה את כל השירותים</a>
-        </div>
-    </section>
-
-    <!-- Service Areas Section -->
-    <section class="service-areas">
-        <div class="container">
-            <h2>אזורי השירות שלנו</h2>
-            <div class="areas-map">
-                <div class="area-circle">
-                    <div class="area-circle-text">המרכז והסביבה</div>
-                </div>
-                <div class="area-circle">
-                    <div class="area-circle-text">חולון והסביבה</div>
-                </div>
-                <div class="area-circle">
-                    <div class="area-circle-text">כל הצפון</div>
-                </div>
-                <div class="area-circle">
-                    <div class="area-circle-text">עמק הירדן</div>
-                </div>
-                <div class="area-circle">
-                    <div class="area-circle-text">אזור ירושלים</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta">
-        <div class="container">
-            <h2>זקוק לעזרה עם ספיחת מים או איטום?</h2>
-            <p>התקשר אלינו היום!</p>
-            <a href="tel:+972503131231" class="hero-btn">📞 התקשר עכשיו</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 יקי איטום. כל הזכויות שמורות.</p>
-            <p>שירותי איטום מקצועיים</p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <div class="waves-bg">
+    <svg viewBox="0 0 1800 880" width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="dynamicBlueGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#309dfd">
+            <animate attributeName="stop-color" values="#309dfd;#1bb8e6;#227cf0;#309dfd" dur="8s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#1767a7">
+            <animate attributeName="stop-color" values="#1767a7;#52affe;#227cf0;#1767a7" dur="7s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,180 Q500,280 900,170 T1800,140 V880 H0 Z"
+        fill="url(#dynamicBlueGrad)">
+        <animate attributeName="d"
+          values="
+              M0,180 Q500,280 900,170 T1800,140 V880 H0 Z;
+              M0,160 Q520,200 900,260 T1800,220 V880 H0 Z;
+              M0,220 Q450,320 900,170 T1800,200 V880 H0 Z;
+              M0,180 Q500,280 900,170 T1800,140 V880 H0 Z"
+          dur="9s" repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
+  <aside class="side-menu">
+    <div class="logo-side">
+      <div class="logo-icon-side">💧</div>
+      יקי איטום
+    </div>
+    <ul class="side-nav-links">
+      <li><a href="index.html" class="active">בית</a></li>
+      <li><a href="about.html">אודות</a></li>
+      <li><a href="services.html">שירותים</a></li>
+      <li><a href="gallery.html">גלריה</a></li>
+      <li><a href="contact.html">צור קשר</a></li>
+    </ul>
+  </aside>
+  <main class="main-section">
+    <h1>יקי איטום</h1>
+    <div class="owner-home-pic">
+      <img src="media/271a74fa-0d39-4060-9259-95fe3561b1ab.jpg" alt="בעל העסק" />
+    </div>
+    <div class="subtitle">שירותי איטום מקצועיים עבור בתים ועסקים</div>
+    <a href="contact.html" class="btn-blue">קבל הצעת מחיר</a>
+  </main>
 </body>
 </html>
