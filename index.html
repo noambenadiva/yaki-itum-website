@@ -22,7 +22,7 @@
     .side-nav-links li{margin-bottom:20px;}
     .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s, color 0.24s;}
     .side-nav-links .active,.side-nav-links a:hover{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12) 60%,rgba(74,157,239,0.06) 95%);transform:translateX(-3px);}
-    .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;}
+    .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;overflow-y:auto;}
     h1 {
       color: #fff;
       margin: 70px 0 24px;
@@ -37,47 +37,51 @@
     .owner-home-pic {margin-bottom: 18px;}
     .owner-home-pic img{width:110px;height:110px;object-fit:cover;border-radius:19px;box-shadow: 0 4px 16px #1266bb2e;}
     .subtitle {font-size: 1.23em; color: #eaffff; text-align: center; margin-bottom: 24px;text-shadow:0 1px 20px #0e5ec257;}
-    .btn-blue{
-      background:linear-gradient(90deg,#309dfd 30%, #1bb8e6 100%);
-      color:#fff;
-      border:none;
-      font-size:1.14em;
-      font-weight:bold;
-      border-radius:28px;
-      padding:15px 56px;
-      margin-bottom: 40px;
-      box-shadow:0 2px 14px #0a143d30;
-      text-decoration:none;
-      transition:.27s all;
-      cursor:pointer;
-      display:inline-block;
-    }
+    .btn-blue{background:linear-gradient(90deg,#309dfd 30%, #1bb8e6 100%);color:#fff;border:none;font-size:1.14em;font-weight:bold;border-radius:28px;padding:15px 56px;margin-bottom: 40px;box-shadow:0 2px 14px #0a143d30;text-decoration:none;transition:.27s all;cursor:pointer;display:inline-block;}
     .btn-blue:hover{background:linear-gradient(90deg,#1bb8e6 10%, #227cf0 88%);}
     /* אזורי עבודה */
-    .areas-wrap{
+    .areas-wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-bottom:48px;margin-top:24px;}
+    .area-circle{width:120px;height:120px;background:linear-gradient(135deg,#309dfd 15%, #1bb8e6 85%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;font-size:1.08em;box-shadow:0 4px 22px #007acc2b;text-align:center;transition:.27s all;}
+    .area-circle:hover{transform:scale(1.08);box-shadow:0 9px 24px #007acc33;background:linear-gradient(135deg,#1bb8e6 15%, #309dfd 85%);}
+    /* בלוק תוכן נוסף */
+    .promo-block{
+      max-width:800px;
+      margin:0 auto 38px auto;
+      background:rgba(255,255,255,0.09);
+      border-radius:16px;
+      color:#fff;
+      font-size:1.18em;
+      padding:22px 30px;
+      box-shadow:0 2px 22px #196af626;
+      text-align:center;
+    }
+    .tips-title{
+      color:#73e2ff;
+      font-size:1.35em;
+      margin-bottom:13px;
+      margin-top:32px;
+      font-weight:bold;
+    }
+    .tips-list{
       display:flex;
       flex-wrap:wrap;
       gap:18px;
       justify-content:center;
-      margin-bottom:48px;
-      margin-top:24px;
+      margin-bottom:40px;
     }
-    .area-circle{
-      width:120px;height:120px;
-      background:linear-gradient(135deg,#309dfd 15%, #1bb8e6 85%);
-      border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:bold;font-size:1.08em;
-      box-shadow:0 4px 22px #007acc2b;
-      text-align:center;
-      transition:.27s all;
+    .tip-box{
+      background:rgba(255,255,255,0.11);
+      color:#fff;
+      font-size:1.1em;
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 1px 9px #0e5ec244;
+      min-width:170px;
+      max-width:270px;
+      transition:.3s;
     }
-    .area-circle:hover{
-      transform:scale(1.08);
-      box-shadow:0 9px 24px #007acc33;
-      background:linear-gradient(135deg,#1bb8e6 15%, #309dfd 85%);
-    }
-    @media (max-width: 1100px) {.side-menu{width:160px;}.logo-side{font-size:1em;}}
+    .tip-box:hover{background:rgba(115,226,255,0.22);color:#0b255a;}
+    @media (max-width: 1100px) {.side-menu{width:160px;}.logo-side{font-size:1em;}.promo-block{max-width:95vw;}}
     @media (max-width: 800px) {
       body{ flex-direction: column;}
       .side-menu{position:relative;flex-direction:row;width:100vw;min-height:unset;height:66px;padding:0 12px;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px #003a8033;}
@@ -88,6 +92,7 @@
       h1{font-size:1.5em;}
       .owner-home-pic img{width:66px;height:66px;}
       .area-circle{width:80px;height:80px;font-size:0.97em;}
+      .tip-box{max-width:140px;padding:10px;}
     }
   </style>
 </head>
@@ -144,6 +149,21 @@
       <div class="area-circle">קיסריה והסביבה</div>
       <div class="area-circle">ירושלים והסביבה</div>
       <div class="area-circle">עמק הירדן</div>
+    </div>
+    <!-- בלוק תוכן נוסף עם מידע מגניב -->
+    <div class="promo-block">
+      <b>אנו מספקים פתרונות איטום מתקדמים לבתים ולעסקים. שימוש בטכנולוגיות מהמובילות בארץ!</b><br>
+      כל עבודה מגובה באחריות מלאה ובשירות אישי לכל לקוח.<br>
+      יש לנו מעל 20 שנות ניסיון בתחום, מאות לקוחות מרוצים והמלצות רבות.
+    </div>
+    <!-- טיפים מועילים -->
+    <div class="tips-title">טיפ לאיטום מושלם:</div>
+    <div class="tips-list">
+      <div class="tip-box">בדקו את הגג לפני החורף</div>
+      <div class="tip-box">היעזרו באנשי מקצוע!</div>
+      <div class="tip-box">דרשו אחריות בכתב</div>
+      <div class="tip-box">אל תחכו לנזילה – הקדימו טיפול</div>
+      <div class="tip-box">השתמשו בחומרים איכותיים בלבד</div>
     </div>
   </main>
 </body>
