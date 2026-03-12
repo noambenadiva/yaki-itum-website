@@ -1,33 +1,184 @@
+Copilot said: ```html <!DOCTYPE html> <html lang="he" dir="rtl"> <head>
+HTML
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>יקי איטום</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>יקי איטום - שירותי איטום מקצועיים</title>
+    <meta name="description" content="שירותי איטום מקצועיים - איטום מרתפים, גגות, ביסוד ועוד">
+    <style>
+        /* Logo Styling */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #0066cc;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        /* Service Areas */
+        .service-areas {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0fafc 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .service-areas h2 {
+            color: #0066cc;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .areas-map {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .area-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .area-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.5);
+        }
+
+        .area-circle-text {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>יקי איטום</h1>
-        <div class="logo">
-            <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="40" fill="white" stroke="blue" stroke-width="5" />
-                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="blue" font-size="15">יקי איטום</text>
-            </svg>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">💧</div>
+                <span>יקי איטום</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">בית</a></li>
+                <li><a href="services.html">שירותים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="contact.html">צור קשר</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
+
+    <!-- Hero Section -->
     <section class="hero">
-        <h2>Welcome to יקי איטום</h2>
-        <p>Your go-to solution for waterproofing services.</p>
-    </section>
-    <section class="service-areas">
-        <h3>Service Areas</h3>
-        <div class="buttons">
-            <button onclick="alert('Information about המרכז והסביבה')">המרכז והסביבה</button>
-            <button onclick="alert('Information about חולון והסביבה')">חולון והסביבה</button>
-            <button onclick="alert('Information about כל הצפון')">כל הצפון</button>
-            <button onclick="alert('Information about עמק הירדן')">עמק הירדן</button>
-            <button onclick="alert('Information about אזור ירושלים')">אזור ירושלים</button>
+        <div class="hero-content">
+            <h1>יקי איטום</h1>
+            <p>שירותי איטום מקצועיים עבור בתים ועסקים</p>
+            <a href="contact.html" class="btn btn-primary">קבל הצעת מחיר</a>
         </div>
     </section>
+
+    <!-- Services Preview Section -->
+    <section class="services-preview">
+        <div class="container">
+            <h2>השירותים שלנו</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏠 איטום מרתפים</h3>
+                    <p>הגנה מלאה מפני ספיחת מים</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏗️ איטום ביסוד</h3>
+                    <p>חיזוק ועיצוב יסודות</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏘️ איטום גגות</h3>
+                    <p>הגנה מפני דלפות וגשם</p>
+                </div>
+                <div class="service-card">
+                    <h3>🚿 חדרי אמבטיה ומטבחים</h3>
+                    <p>איטום מקצועי למקומות רטובים</p>
+                </div>
+            </div>
+            <a href="services.html" class="btn btn-secondary">ראה את כל השירותים</a>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="service-areas">
+        <div class="container">
+            <h2>אזורי השירות שלנו</h2>
+            <div class="areas-map">
+                <div class="area-circle">
+                    <div class="area-circle-text">המרכז והסביבה</div>
+                </div>
+                <div class="area-circle">
+                    <div class="area-circle-text">חולון והסביבה</div>
+                </div>
+                <div class="area-circle">
+                    <div class="area-circle-text">כל הצפון</div>
+                </div>
+                <div class="area-circle">
+                    <div class="area-circle-text">עמק הירדן</div>
+                </div>
+                <div class="area-circle">
+                    <div class="area-circle-text">אזור ירושלים</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>זקוק לעזרה עם ספיחת מים או איטום?</h2>
+            <p>התקשר אלינו היום!</p>
+            <a href="tel:+972503131231" class="btn btn-primary">📞 התקשר עכשיו</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 יקי איטום. כל הזכויות שמורות.</p>
+            <p>שירותי איטום מקצועיים</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
+
