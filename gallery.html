@@ -15,50 +15,97 @@
         h1 {
             text-align: center;
             color: white;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .gallery-container {
+        /* Phone Screen Section */
+        .phone-section {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-item {
+        .phone-mock {
             position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            background: white;
-            height: 250px;
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 40px;
+            padding: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .gallery-item img,
-        .gallery-item video {
+        .phone-mock::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 25px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-screen video {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
+        .video-preview {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .video-preview img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .video-preview h2 {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .video-preview p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1em;
         }
 
         @media (max-width: 768px) {
-            .gallery {
-                grid-template-columns: 1fr;
+            .phone-section {
+                flex-direction: column;
+                gap: 20px;
             }
-            .gallery-item {
-                height: 200px;
+
+            .phone-mock {
+                width: 250px;
+                height: 500px;
             }
         }
     </style>
@@ -80,49 +127,23 @@
         </div>
     </nav>
 
-    <h1>גלריה</h1>
-    
-    <div class="gallery-container">
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="media/9fa8f74a-f1ac-4dd0-99e0-83a216c58eeb.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="media/ccae23f8-d55c-4f8b-84f5-256aed6fadeb.jpg" alt="">
-            </div>
+    <h1>עבודות שלנו</h1>
 
-            <div class="gallery-item">
-                <img src="media/302f335d-95c8-4494-ba8a-596c3b73c301.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="media/a6f6790c-cabf-4cfb-9670-b398b97c4fa7.jpg" alt="בעל העסק">
-            </div>
+    <!-- Phone Screen with Video -->
+    <section class="phone-section">
+        <div class="video-preview">
+            <img src="media/271a74fa-0d39-4060-9259-95fe3561b1ab.jpg" alt="עבודה">
+            <h2>צפו בעבודות שלנו</h2>
+            <p>סרטון של כל העבודות המקצועיות שלנו</p>
+        </div>
 
-            <div class="gallery-item">
-                <img src="media/7c29d124-bb81-47bb-a002-982c92e85b6d.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="media/9a121a18-f853-4687-8eee-2abbe8902520.jpg" alt="">
-            </div>
-
-            <div class="gallery-item">
-                <img src="media/9ac6cbe1-85e7-4633-8608-729e7a35c2d1.jpg" alt="">
-            </div>
-            <div class="gallery-item">
-                <img src="media/d229b7bc-c175-4f49-9e79-2b85e419d855.jpg" alt="">
-            </div>
-
-            <div class="gallery-item">
+        <div class="phone-mock">
+            <div class="phone-screen">
                 <video controls>
-                    <source src="media/WhatsApp Video 2026-03-12 at 11.00.35.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="gallery-item">
-                <video controls>
-                    <source src="media/WhatsApp Video 2026-03-12 at 11.03.38.mp4" type="video/mp4">
+                    <source src="media/WhatsApp Video 2026-03-12 at 13.16.44.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
