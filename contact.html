@@ -1,100 +1,37 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>צור קשר - יקי איטום</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אודות - יקי איטום</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- השתמש בדיוק באותו סגנון כמו index.html, תוכל להעתיק את ה-CSS מהקוד הקודם -->
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">יקי איטום</div>
-            <ul class="nav-links">
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>צור קשר</h1>
-            <p>אנחנו כאן כדי לעזור לך</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>פרטי התקשרות</h2>
-                    <div class="info-item">
-                        <h3>📞 טלפון</h3>
-                        <p><a href="tel:+972503131231">050-3131231</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>📧 דוא"ל</h3>
-                        <p><a href="mailto:yakiadik@gmail.com">yakiadik@gmail.com</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h3>📍 אזור שירות</h3>
-                        <p>כל אזור תל אביב וגבולותיו</p>
-                    </div>
-                    <div class="info-item">
-                        <h3>🕐 שעות פתיחה</h3>
-                        <p>כל ימות השבוע 7:00 - 20:00</p>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <h2>טופס יצירת קשר</h2>
-                    <div class="form-group">
-                        <label for="name">שם מלא *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">טלפון *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">דוא"ל</label>
-                        <input type="email" id="email" name="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">נושא *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">בחר נושא</option>
-                            <option value="aiytum-martefim">איטום מרתפים</option>
-                            <option value="aiytum-bisod">איטום ביסוד</option>
-                            <option value="aiytum-gagot">איטום גגות</option>
-                            <option value="aiytum-ambatia">איטום חדרי אמבטיה</option>
-                            <option value="other">אחר</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">הודעה *</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">שלח הודעה</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 יקי איטום. כל הזכויות שמורות.</p>
-            <p>שירותי איטום מקצועיים</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="waves-bg">
+    <!-- אותו רקע SVG (להעתיק כמו בדף הבית) -->
+  </div>
+  <aside class="side-menu">
+    <!-- אותו תפריט צד (להעתיק כמו בדף הבית) -->
+    <div class="logo-side">
+      <div class="logo-icon-side">💧</div>
+      יקי איטום
+    </div>
+    <ul class="side-nav-links">
+      <li><a href="index.html">בית</a></li>
+      <li><a href="about.html" class="active">אודות</a></li>
+      <li><a href="services.html">שירותים</a></li>
+      <li><a href="gallery.html">גלריה</a></li>
+      <li><a href="contact.html">צור קשר</a></li>
+    </ul>
+  </aside>
+  <main class="main-section">
+      <h1>עלינו</h1>
+      <div class="subtitle">מומחים באיטום מעל 20 שנה</div>
+      <p style="color:#fff;text-align:center;font-size:1.18em;max-width:520px;margin:0 auto;">
+        יקי איטום היא חברה עם ניסיון עשיר, מקצועיות ואמינות. אנו מתמחים באיטום מבנים, גגות, מרתפים ומבצעים כל עבודה באיכות ובאחריות מלאה. 
+        הצוות שלנו משתמש בחומרים איכותיים ותמיד דואג שהלקוח יהיה מרוצה.
+      </p>
+  </main>
 </body>
 </html>
