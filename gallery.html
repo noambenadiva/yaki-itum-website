@@ -6,43 +6,90 @@
     <title>עבודות שלנו - יקי איטום</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-        /* רקע דינמי עם גלים כחולים (SVG + gradient animation) */
         body {
+            background: linear-gradient(135deg, #227cf0 0%, #1bb8e6 100%);
             min-height: 100vh;
             margin: 0;
-            padding: 0;
-            position: relative;
-            font-family: Arial, sans-serif;
+            font-family: "Segoe UI", Arial, sans-serif;
             color: #fff;
-            overflow-x: hidden;
+            display: flex;
         }
-        .dynamic-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
+
+        /* תפריט צד שמאל */
+        .side-menu {
+            width: 210px;
+            background: rgba(255,255,255,0.11);
+            padding: 40px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 0 24px rgba(90,120,255,0.08);
+            min-height: 100vh;
         }
-        .main-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
+        .side-menu .logo-side {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.22em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+        .side-menu .logo-icon-side {
+            background: linear-gradient(135deg,#63c6ff 0%, #0066cc 80%);
+            border-radius: 50%;
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff;
+            font-size: 1.21em;
+            margin-left:3px;
+        }
+        .side-nav-links {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .side-nav-links li {
+            margin-bottom: 18px;
+        }
+        .side-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.2s, background 0.2s;
+            padding: 6px 12px 6px 6px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+        }
+        .side-nav-links a:hover,
+        .side-nav-links .active {
+            background: rgba(255,255,255,0.14);
+            color: #3869ff;
+        }
+
+        .gallery-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 30px;
         }
 
         h1 {
-            text-align: center;
             color: #fff;
-            margin: 40px 0 36px;
-            font-size: 2.5em;
-            text-shadow: 0 2px 22px rgba(0, 64, 180, 0.22);
-            letter-spacing: 1px;
+            margin: 38px 0 36px;
+            font-size: 2.3em;
             font-weight: bold;
+            text-align: center;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 14px rgba(0,50,120,0.21);
         }
 
         .phone-section {
-            max-width: 900px;
             margin: 0 auto;
             display: flex;
             justify-content: center;
@@ -54,13 +101,14 @@
             position: relative;
             width: 320px;
             height: 640px;
-            background: #0b0b0b;
+            background: #121a26;
             border-radius: 44px;
-            padding: 14px;
-            box-shadow: 0 14px 50px rgba(0, 0, 0, 0.32);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 12px;
+            box-shadow: 0 14px 50px rgba(0, 0, 0, 0.29);
+            border: 1px solid rgba(255,255,255,0.07);
             justify-self: center;
             animation: floatPhone 3s ease-in-out infinite alternate;
+            margin-top: 35px;
         }
         @keyframes floatPhone {
             0% { transform: translateY(0px);}
@@ -75,21 +123,20 @@
             transform: translateX(-50%);
             width: 160px;
             height: 26px;
-            background: #0b0b0b;
+            background: #121a26;
             border-radius: 0 0 18px 18px;
             z-index: 2;
         }
-
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: #ffffff;
+            background: #fff;
             border-radius: 34px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 12px rgba(0, 85, 255, 0.2);
+            box-shadow: 0 2px 12px rgba(0, 85, 255, 0.13);
         }
         .phone-screen video {
             width: 100%;
@@ -98,115 +145,39 @@
             display: block;
             background: #000;
         }
-
-        .navbar {
-            background: transparent;
-            padding: 15px 0;
-            position: relative;
-            z-index: 4;
+        @media (max-width: 1100px) {
+            .side-menu{width:155px;}
+            .gallery-container{padding:8px 8px;}
         }
-        .navbar .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #fff;
-            z-index: 4;
-        }
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #63c6ff 0%, #0066cc 80%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5em;
-            border: 2px solid #fff;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            text-shadow: 0 2px 8px rgba(0,50,120,0.27);
-        }
-        .nav-links a:hover {
-            color: #93e2ff;
-        }
-
-        @media (max-width: 980px) {
-            .phone-mock {
-                width: 240px;
-                height: 430px;
-            }
-            h1 {
-                font-size: 1.6em;
-            }
+        @media (max-width:768px) {
+            body{flex-direction:column;}
+            .side-menu{width:100vw;min-height:80px;flex-direction:row;padding:8px 4px;}
+            .gallery-container{padding:8px;}
+            .side-nav-links{display:flex;gap:13px;margin-bottom:0;}
+            .side-nav-links li{margin-bottom:0;}
+            h1{font-size:1.3em;}
+            .phone-mock{width:200px;height:340px;margin-top:18px;}
         }
     </style>
 </head>
 <body>
-    <!-- רקע SVG גלים כחול דינמי -->
-    <div class="dynamic-bg">
-        <svg width="100vw" height="100vh" viewBox="0 0 1440 880" preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-            <defs>
-                <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0066cc">
-                        <animate attributeName="stop-color" values="#0066cc;#309dfd;#0066cc" dur="6s" repeatCount="indefinite"/>
-                    </stop>
-                    <stop offset="100%" stop-color="#89d7ff">
-                        <animate attributeName="stop-color" values="#89d7ff;#b3e5fc;#89d7ff" dur="6s" repeatCount="indefinite"/>
-                    </stop>
-                </linearGradient>
-            </defs>
-            <path d="M0,170 Q360,330 720,170 T1440,170 V880 H0 Z"
-                fill="url(#blueGradient)">
-                <animate attributeName="d"
-                    values="
-                    M0,170 Q360,330 720,170 T1440,170 V880 H0 Z;
-                    M0,190 Q400,290 720,270 T1440,210 V880 H0 Z;
-                    M0,170 Q360,330 720,170 T1440,170 V880 H0 Z"
-                    dur="6s" repeatCount="indefinite"/>
-            </path>
-        </svg>
-    </div>
-
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">💧</div>
-                <span>יקי איטום</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
+    <!-- תפריט צד שמאל -->
+    <aside class="side-menu">
+        <div class="logo-side">
+            <div class="logo-icon-side">💧</div>
+            יקי איטום
         </div>
-    </nav>
+        <ul class="side-nav-links">
+            <li><a href="index.html">בית</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="services.html">שירותים</a></li>
+            <li><a href="gallery.html" class="active">גלריה</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+    </aside>
 
-    <div class="main-content">
+    <div class="gallery-container">
         <h1>עבודות שלנו</h1>
-
         <section class="phone-section">
             <div class="phone-mock">
                 <div class="phone-screen">
