@@ -1,106 +1,73 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>שירותים - יקי איטום</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שירותים - יקי איטום</title>
+  <style>
+    html,body{height:100%;}
+    body {margin:0;min-height:100vh;font-family: "Segoe UI", Arial, sans-serif;display:flex;background:#11294d;overflow-x:hidden;}
+    .waves-bg {position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
+    .side-menu {width:220px;background:rgba(13,48,104,0.85);backdrop-filter:blur(7px);box-shadow:0 8px 32px rgba(20,60,131,0.12);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;z-index:2;position:relative;}
+    .logo-side {display:flex;align-items:center;gap:9px;color:#fff;font-size:1.25em;font-weight:bold;margin:0 0 40px 0;padding-right:18px;letter-spacing:1px;}
+    .logo-icon-side{width:40px;height:40px;background:linear-gradient(135deg,#63c6ff 0%, #0066cc 80%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.22em;border:2px solid #31bbff45;}
+    .side-nav-links{list-style:none;width:100%;padding:0 0 0 6px;margin-bottom:35px;}
+    .side-nav-links li{margin-bottom:20px;}
+    .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;transition:background 0.28s, color 0.24s;}
+    .side-nav-links .active,.side-nav-links a:hover{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12) 60%,rgba(74,157,239,0.06) 95%);transform:translateX(-3px);}
+    .main-section{flex:1;min-height:100vh;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 16px;}
+    h1 {color:#fff;margin:70px 0 24px;font-size:2.4em;font-weight:bold;text-shadow:0 2px 26px #46b8f668,0 0 7px #1892fd38;letter-spacing:.8px;}
+    ul.service-list {color:#fff;font-size:1.18em;list-style:disc;line-height:2.1;text-align:right;max-width:420px;margin:16px auto;}
+    @media(max-width:1100px){.side-menu{width:160px;}.logo-side{font-size:1em;}}
+    @media(max-width:800px){body{flex-direction:column;}.side-menu{position:relative;flex-direction:row;width:100vw;min-height:unset;height:66px;padding:0 12px;align-items:center;justify-content:flex-start;box-shadow:0 4px 20px #003a8033;}.logo-side{margin:0 13px 0 0;}.side-nav-links{display:flex;flex-direction:row;gap:12px;margin-bottom:0;}.side-nav-links li{margin-bottom:0;}.main-section{padding:0;}h1{font-size:1.3em;}ul.service-list{font-size:1em;}}
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">יקי איטום</div>
-            <ul class="nav-links">
-                <li><a href="index.html">בית</a></li>
-                <li><a href="services.html">שירותים</a></li>
-                <li><a href="gallery.html">גלריה</a></li>
-                <li><a href="contact.html">צור קשר</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>שירותים</h1>
-            <p>פתרונות איטום מלאים לכל הצרכים</p>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <div class="service-detail">
-                <h2>🏠 איטום מרתפים</h2>
-                <p>מרתפים לח הם בעיה נפוצה שיכולה להוביל לנזק למבנה וליצור סביבה לא בריאה. אנחנו מספקים פתרונות איטום מלאים להגנה על המרתף שלך.</p>
-                <ul>
-                    <li>בדיקה מעמיקה של הבעיה</li>
-                    <li>נקבוביות סדוקות בקירות</li>
-                    <li>הגנה מפני ספיחת מים</li>
-                    <li>טיפול לטווח ארוך</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">בקש הצעת מחיר</a>
-            </div>
-
-            <div class="service-detail">
-                <h2>🏗️ איטום ביסוד</h2>
-                <p>הביסוד הוא היסוד של הבניין. איטום נכון של הביסוד חיוני להבטיחות המבנה ותאריך החיים שלו.</p>
-                <ul>
-                    <li>תיקון סדקים בביסוד</li>
-                    <li>איטום מלא מפני מים</li>
-                    <li>חיזוק הביסוד</li>
-                    <li>עבודות מקצועיות וברווח</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">בקש הצעת מחיר</a>
-            </div>
-
-            <div class="service-detail">
-                <h2>🏘️ איטום גגות</h2>
-                <p>הגג הוא החלק החיוני ביותר של הבניין. הגנה מפני גשם ודלפות היא חיוני.</p>
-                <ul>
-                    <li>בדיקת דלפות</li>
-                    <li>תיקון קורות ותיקרות</li>
-                    <li>ציפוי איטום מקצועי</li>
-                    <li>הגנה מפני השמש והגשם</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">בקש הצעת מחיר</a>
-            </div>
-
-            <div class="service-detail">
-                <h2>🚿 חדרי אמבטיה ומטבחים</h2>
-                <p>חדרי אמבטיה ומטבחים חשופים לרטיבות גבוהה. איטום נכון חיוני כדי לשמור על הבניין בריא.</p>
-                <ul>
-                    <li>איטום חדרי אמבטיה</li>
-                    <li>חיזוק הרטיבות</li>
-                    <li>תיקון הנזקים</li>
-                    <li>עיצוב מודרני</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">בקש הצעת מחיר</a>
-            </div>
-
-            <div class="service-detail">
-                <h2>🔧 שירותים נוספים</h2>
-                <p>אנחנו מספקים שירותים נוספים לכל הצרכים של איטום ותיקון.</p>
-                <ul>
-                    <li>בדיקות תקופתיות</li>
-                    <li>תחזוקה שנתית</li>
-                    <li>עזרה בחירום</li>
-                    <li>ייעוץ מקצועי</li>
-                </ul>
-                <a href="contact.html" class="btn btn-primary">בקש הצעת מחיר</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 יקי איטום. כל הזכויות שמורות.</p>
-            <p>שירותי איטום מקצועיים</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <div class="waves-bg">
+    <svg viewBox="0 0 1800 880" width="100%" height="100%" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="dynamicBlueGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#309dfd">
+            <animate attributeName="stop-color" values="#309dfd;#1bb8e6;#227cf0;#309dfd" dur="8s" repeatCount="indefinite"/>
+          </stop>
+          <stop offset="100%" stop-color="#1767a7">
+            <animate attributeName="stop-color" values="#1767a7;#52affe;#227cf0;#1767a7" dur="7s" repeatCount="indefinite"/>
+          </stop>
+        </linearGradient>
+      </defs>
+      <path d="M0,180 Q500,280 900,170 T1800,140 V880 H0 Z"
+        fill="url(#dynamicBlueGrad)">
+        <animate attributeName="d"
+          values="M0,180 Q500,280 900,170 T1800,140 V880 H0 Z;M0,160 Q520,200 900,260 T1800,220 V880 H0 Z;M0,220 Q450,320 900,170 T1800,200 V880 H0 Z;M0,180 Q500,280 900,170 T1800,140 V880 H0 Z"
+          dur="9s"
+          repeatCount="indefinite" />
+      </path>
+    </svg>
+  </div>
+  <aside class="side-menu">
+    <div class="logo-side">
+      <div class="logo-icon-side">💧</div>
+      יקי איטום
+    </div>
+    <ul class="side-nav-links">
+      <li><a href="index.html">בית</a></li>
+      <li><a href="about.html">אודות</a></li>
+      <li><a href="services.html" class="active">שירותים</a></li>
+      <li><a href="gallery.html">גלריה</a></li>
+      <li><a href="contact.html">צור קשר</a></li>
+    </ul>
+  </aside>
+  <main class="main-section">
+      <h1>השירותים שלנו</h1>
+      <ul class="service-list">
+        <li>איטום גגות ומרפסות</li>
+        <li>איטום מרתפים ויסודות</li>
+        <li>איטום חניונים</li>
+        <li>איטום חדרי אמבטיה ושירותים</li>
+        <li>תיקון סדקים במעטפת המבנה</li>
+        <li>בדיקות וביקורת איטום מקצועית</li>
+        <li>עבודות איטום עם אחריות!</li>
+      </ul>
+  </main>
 </body>
 </html>
