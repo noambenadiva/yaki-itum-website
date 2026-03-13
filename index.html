@@ -6,7 +6,14 @@
     <title>יקי איטום - שירותי איטום מקצועיים</title>
     <style>
         html,body{height:100%;}
-        body {margin: 0; min-height: 100vh; font-family: "Segoe UI", Arial, sans-serif; display: flex; background: #11294d; overflow-x: hidden;}
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            display: flex;
+            background: #11294d;
+            overflow-x: hidden;
+        }
         .waves-bg {position: fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none;}
 
         .side-menu {width:220px;background:rgba(13,48,104,0.85);backdrop-filter:blur(7px);box-shadow:0 8px 32px rgba(20,60,131,0.12);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;z-index:2;position:relative;}
@@ -64,10 +71,23 @@
             box-shadow: 0 4px 16px rgba(0,102,204,0.16);
             display: block;
         }
-        .hero-btn {background:#0066cc;color:#fff;padding:15px 38px;border-radius:5px;border:none;font-size:1.1em;text-decoration:none;font-weight:bold;margin-bottom:10px;cursor:pointer;transition:background 0.3s;display:inline-block;}
+        .hero-btn {
+            background: #0066cc;
+            color: #fff;
+            padding: 15px 38px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1em;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+        }
         .hero-btn:hover {background:#0052a3;}
 
-        /* שירותים */
+        /* שירותים - ריבועים ממורכזים */
         .services-preview {
             background: #fff;
             padding: 56px 20px;
@@ -82,13 +102,14 @@
             margin-bottom: 40px;
             font-size: 2.2em;
         }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 18px;
             max-width: 960px;
             margin: 0 auto;
-            justify-items: end; /* יישור לימין */
+            justify-items: center;           /* מרכז */
         }
         .service-card {
             background: #f9f9f9;
@@ -98,7 +119,7 @@
             transition: transform 0.3s ease;
             width: 90%;
             max-width: 340px;
-            margin-right: 12px; /* יישור לימין */
+            margin: 0 auto;                  /* מרכז */
         }
         .service-card:hover {
             transform: translateY(-5px);
@@ -106,20 +127,24 @@
         .service-card h3 {
             color: #0066cc;
             margin-bottom: 10px;
+            text-align: right;
         }
-        .service-card p {color:#666;}
+        .service-card p {
+            color: #666;
+            text-align: right;
+        }
 
         @media (max-width: 600px) {
           .services-grid {
             grid-template-columns: 1fr;
             gap: 14px;
             max-width: 99vw;
-            justify-items: end; /* גם במובייל לימין */
+            justify-items: center;          /* גם במובייל מרכז */
           }
           .service-card {
             width: 98%;
             max-width: 320px;
-            margin-right: 12px;
+            margin: 0 auto;
           }
         }
 
