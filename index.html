@@ -177,31 +177,44 @@
             margin-bottom:28px;
         }
         .services-grid {
-  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-items: center;   /* הוספתי כאן */
 }
 .service-card {
-  width: 92%;
-  max-width: 370px;
-  margin: auto;
+  background: #f9f9f9;
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  transition: transform 0.3s ease;
+  width: 92%;              /* הוספתי כאן */
+  max-width: 370px;        /* הוספתי כאן */
+  margin: auto;            /* הוספתי כאן */
 }
+.service-card:hover {
+  transform: translateY(-5px);
+}
+.service-card h3 {
+  color: #0066cc;
+  margin-bottom: 10px;
+}
+.service-card p {color:#666;}
+
 @media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 99vw;
+  }
   .service-card {
     width: 96%;
     max-width: 340px;
   }
 }
-         @media (max-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        max-width: 99vw;
-      }
-      .service-card {
-        min-width: 0 !important;
-        width: 100% !important;
-      }
-    }
-
+        
        
     </style>
 </head>
