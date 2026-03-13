@@ -176,6 +176,17 @@
             margin:0 auto;
             margin-bottom:28px;
         }
+        @media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 99vw;
+  }
+  .service-card {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
 
         @media (max-width: 768px) {
             .hero-title{font-size:2em;}
