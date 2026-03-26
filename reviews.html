@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ביקורות - יקי איטום ופרויקטים</title>
+    <style>
+        body {margin:0;background:#11294d;font-family:"Segoe UI",Arial,sans-serif;}
+        .side-menu {width:220px;background:rgba(13,48,104,0.85);min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;padding:36px 0 0 0;}
+        .logo-side {display:flex;align-items:center;gap:9px;color:#fff;font-size:1.25em;font-weight:bold;margin:0 0 40px 0;padding-right:18px;}
+        .logo-icon-side{width:40px;height:40px;background:linear-gradient(135deg,#63c6ff 0%, #0066cc 80%);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.22em;}
+        .side-nav-links{list-style:none;width:100%;padding:0 0 0 6px;margin-bottom:35px;}
+        .side-nav-links li{margin-bottom:20px;}
+        .side-nav-links a{color:#e8f6ff;text-decoration:none;font-weight:600;font-size:1.1em;padding:7px 20px 7px 8px;border-radius:9px 0 0 9px;display:flex;align-items:center;}
+        .side-nav-links .active{color:#73e2ff;background:linear-gradient(90deg,rgba(74,157,239,0.12)60%,rgba(74,157,239,0.06)95%);}
+        @media (max-width: 800px) {.side-menu{width:100vw;height:65px;flex-direction:row;align-items:center;justify-content:flex-start;}}
+        .reviews-content {padding:60px 10px 0 10px;max-width:950px;margin:60px auto 0 auto;background:#fff;border-radius:28px;box-shadow:0 1px 19px #75a7e661;}
+        .reviews-title {color:#0066cc;font-size:2.25em;text-align:center;margin-bottom:28px;letter-spacing:1px;}
+        .review-list {display: flex;flex-wrap: wrap;gap:24px;justify-content:center;}
+        .review-card {background: #f9f9fd; border-radius:18px;box-shadow:0 2px 11px #8dcaf633;padding:26px;max-width:310px;min-width:250px;flex:1;display:flex;flex-direction:column;align-items:flex-start;position:relative;}
+        .review-card .stars {color:#ffd03c;font-size:1.22em;margin-bottom:7px;}
+        .review-card .reviewer {font-weight:bold;color:#0066cc;}
+        .review-card .date {font-size:0.97em;color:#888;margin-bottom:6px;}
+        .review-card .content {margin-bottom:4px;color:#273;line-height:1.6;}
+        .review-card .project {color:#11b; font-size:0.97em;margin-bottom:7px;}
+        @media (max-width:680px) {.reviews-content{padding:18px 0;} .review-list{flex-direction:column;gap:10px;}}
+    </style>
+</head>
+<body>
+    <aside class="side-menu">
+        <div class="logo-side">
+            <div class="logo-icon-side">💧</div>
+            יקי איטום ופרויקטים
+        </div>
+        <ul class="side-nav-links">
+            <li><a href="index.html">בית</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="services.html">שירותים</a></li>
+            <li><a href="gallery.html">גלריה</a></li>
+            <li><a href="reviews.html" class="active">ביקורות</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+    </aside>
+    <main>
+        <div class="reviews-content">
+            <div class="reviews-title">מה הלקוחות מספרים?</div>
+            <div class="review-list">
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviewer">אורית מ.</div>
+                    <div class="date">20.2.2026</div>
+                    <div class="project">איטום גג בבניין משותף</div>
+                    <div class="content">
+                        קיבלנו שירות מקצועי, אמין ומהיר! יקי והצוות עבדו בניקיון, הסבירו כל שלב, ונתנו אחריות אמיתית. מאוד ממליצה!
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviewer">דניאל ש.</div>
+                    <div class="date">12.3.2026</div>
+                    <div class="project">איטום מרתף במשרד</div>
+                    <div class="content">
+                        תיק של שנים נפתר יום אחד. הכל נסגר מהר, המחיר הוגן, עבודה מקצועית מאוד. ממליץ בחום!
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviewer">מרים ב.</div>
+                    <div class="date">3.1.2026</div>
+                    <div class="project">איטום חדר אמבטיה</div>
+                    <div class="content">
+                        יחס אישי, עבודה יסודית ויפה. מאז שתיקנתם – אין טיפה רטיבות. שירות מעל ומעבר.
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <div class="reviewer">יוסי פ.</div>
+                    <div class="date">7.4.2026</div>
+                    <div class="project">תחזוקת איטום בגינה</div>
+                    <div class="content">
+                        עמדו בזמנים, פתרו לנו בעיה טורדנית. היו זמינים ותיקנו מהר. לגמרי אחזור בעתיד.
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviewer">שני ג.</div>
+                    <div class="date">9.2.2026</div>
+                    <div class="project">איטום יסודות בבית פרטי</div>
+                    <div class="content">
+                        בחרתי ב'יקי איטום ופרויקטים' בזכות המלצות – ולא התאכזבתי. הכל ברמה גבוהה, הכל מוסבר, ואחריות אמיתית.
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="reviewer">אילן ת.</div>
+                    <div class="date">17.2.2026</div>
+                    <div class="project">איטום תעלת ניקוז</div>
+                    <div class="content">
+                        שירות מדהים, מהירים ויסודיים. תודה רבה, פתרתם לנו סיפור שאף אחד לא הצליח!
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>
